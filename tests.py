@@ -29,11 +29,9 @@ class TestBooksCollector:
     def test_get_book_genre_returns_correct_genre(self, book_name, expected_genre):
         collector = BooksCollector()
 
-        if book_name == 'Солярис':
-            collector.add_new_book('Солярис')
-            collector.set_book_genre('Солярис', 'Фантастика')
-        elif book_name == 'Заводной апельсин':
-            collector.add_new_book('Заводной апельсин')
+        collector.add_new_book('Солярис')
+        collector.set_book_genre('Солярис', 'Фантастика')
+        collector.add_new_book('Заводной апельсин')
 
         assert collector.get_book_genre(book_name) == expected_genre
 
